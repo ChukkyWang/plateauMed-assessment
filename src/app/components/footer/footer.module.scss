@@ -1,0 +1,15 @@
+.footer {
+  --font: 0.81rem;
+  p {
+    text-align: center;
+    font-size: var(--font);
+
+    * {
+      font-size: var(--font);
+    }
+
+    a {
+      color: var(--primary-color);
+    }
+  }
+}

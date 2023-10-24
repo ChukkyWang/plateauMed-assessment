@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  &_h3 {
+    text-transform: uppercase;
+  }
+
+  &_p {
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+}
+
+.button {
+  // background-color: var(--primary-color);
+ 
+}

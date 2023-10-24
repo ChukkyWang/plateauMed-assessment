@@ -1,0 +1,13 @@
+.footer {
+  --font: 0.81rem;
+}
+.footer p {
+  text-align: center;
+  font-size: var(--font);
+}
+.footer p * {
+  font-size: var(--font);
+}
+.footer p a {
+  color: var(--primary-color);
+}/*# sourceMappingURL=footer.module.css.map */
