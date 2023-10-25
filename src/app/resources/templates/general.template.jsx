@@ -27,7 +27,7 @@ function General({ children }) {
               )
             }
           >
-            {action_type} {class_type}
+            {action_type === ENUMS.ACTIONS.ADD ? "View" : "Add"} {class_type}
           </Button>
           <Button
             className={style.gTemplateHeader_btnGroup_primary}

@@ -12,9 +12,7 @@ const initialState = {
 
 export const AppContext = createContext(initialState);
 
-// export function useAppContext() {
-//   return useContext(AppContext);
-// }
+
 
 export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, initialState);
