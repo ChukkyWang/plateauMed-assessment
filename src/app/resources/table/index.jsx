@@ -7,10 +7,3 @@ function Table({ children }) {
 
 export default Table;
 
-// ● National ID number - required field
-// ● Title - required can be either [Mr, Mrs, Miss, Dr, Prof]
-// ● Name - required
-// ● Surname - required
-// ● Date of Birth - required - their age may not be less than 21
-// ● Teacher Number - required
-// ● Salary - optional

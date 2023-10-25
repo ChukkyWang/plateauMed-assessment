@@ -1,0 +1,28 @@
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+
+  > * {
+    width: 400px;
+    margin: 0 0 1rem;
+
+    input,
+    label {
+      width: inherit;
+      font-size: 0.9rem;
+    }
+
+    input {
+      padding: 0.45rem 1rem;
+      border-radius: var(--border-radius);
+      outline: none;
+      border: 1px solid var(--secondary-color);
+    }
+
+
+    small{
+     font-size: 0.7rem;
+     color: red
+    }
+  }
+}

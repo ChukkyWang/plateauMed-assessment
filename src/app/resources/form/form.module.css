@@ -1,0 +1,23 @@
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.form > * {
+  width: 400px;
+  margin: 0 0 1rem;
+}
+.form > * input,
+.form > * label {
+  width: inherit;
+  font-size: 0.9rem;
+}
+.form > * input {
+  padding: 0.45rem 1rem;
+  border-radius: var(--border-radius);
+  outline: none;
+  border: 1px solid var(--secondary-color);
+}
+.form > * small {
+  font-size: 0.7rem;
+  color: red;
+}/*# sourceMappingURL=form.module.css.map */

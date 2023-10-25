@@ -1,16 +1,19 @@
 .table {
   margin: 1.6rem auto;
   width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
 }
 .table thead {
-  background-color: yellow;
-  border-collapse: collapse;
-}
-.table thead tr {
-  border-collapse: collapse;
+  background-color: var(--secondary-color);
 }
 .table thead tr,
 .table thead th {
+  text-align: left;
+  padding: 1rem;
+}
+.table tbody tr,
+.table tbody td {
   text-align: left;
   padding: 1rem;
 }/*# sourceMappingURL=table.module.css.map */

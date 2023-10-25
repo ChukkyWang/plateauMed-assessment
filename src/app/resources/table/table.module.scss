@@ -1,17 +1,22 @@
 .table {
   margin: 1.6rem auto;
   width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
 
   thead {
-    background-color: yellow;
-    border-collapse: collapse;
+    background-color: var(--secondary-color);
 
-    tr {
-      border-collapse: collapse;
-    }
-    
     tr,
     th {
+      text-align: left;
+      padding: 1rem;
+    }
+  }
+
+  tbody {
+    tr,
+    td {
       text-align: left;
       padding: 1rem;
     }
