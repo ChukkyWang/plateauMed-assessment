@@ -1,0 +1,19 @@
+.table {
+  margin: 1.6rem auto;
+  width: 100%;
+
+  thead {
+    background-color: yellow;
+    border-collapse: collapse;
+
+    tr {
+      border-collapse: collapse;
+    }
+    
+    tr,
+    th {
+      text-align: left;
+      padding: 1rem;
+    }
+  }
+}

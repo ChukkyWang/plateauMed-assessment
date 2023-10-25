@@ -1,0 +1,16 @@
+.table {
+  margin: 1.6rem auto;
+  width: 100%;
+}
+.table thead {
+  background-color: yellow;
+  border-collapse: collapse;
+}
+.table thead tr {
+  border-collapse: collapse;
+}
+.table thead tr,
+.table thead th {
+  text-align: left;
+  padding: 1rem;
+}/*# sourceMappingURL=table.module.css.map */
