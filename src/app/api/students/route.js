@@ -2,30 +2,26 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "../../../../prisma/client";
 
 export async function GET(request) {
-  const res = await prisma.teacher.findMany();
+  const res = await prisma.student.findMany();
   return NextResponse.json({ res });
 }
 
 export async function POST(request, response) {
   const {
     nationalId,
-    title,
     name,
     surname,
     dateOfBirth,
-    teacherNumber,
-    salary,
+    studentNumber,
   } = await request.json();
 
-  const new_user = await prisma.teacher.create({
+  const new_user = await prisma.student.create({
     data: {
       nationalId,
-      title,
       name,
       surname,
       dateOfBirth,
-      teacherNumber,
-      salary,
+      studentNumber,
     },
   });
 

@@ -10,11 +10,9 @@ import { CalculateMaxAge } from "./utils/util";
 import { useContext, useState, useEffect } from "react";
 import { AppContext } from "./utils/context/AppContext";
 import { ENUMS } from "./utils/enums";
-import { useRouter } from "next/navigation";
 
-function Teachers() {
-  const router = useRouter();
-  const [teachers, setTeacher] = useState({});
+function Students() {
+  const [students, setStudent] = useState({});
   const { switchActionType, action_type } = useContext(AppContext);
   const max = CalculateMaxAge();
 
@@ -27,41 +25,38 @@ function Teachers() {
     formState: { isValid },
   } = formMethods;
 
-  const fetchTeachers = async () => {
-    const res = await fetch("http://localhost:3000/api/teachers", {
+  const fetchStudents = async () => {
+    const res = await fetch("http://localhost:3000/api/students", {
       method: "GET",
       cache: "no-cache",
     });
     const data = await res.json();
-    setTeacher(data);
+    setStudent(data);
   };
 
-  const addTeachers = async (data) => {
-    const res = await fetch("http://localhost:3000/api/teachers", {
+  const addStudents = async (data) => {
+    const res = await fetch("http://localhost:3000/api/students", {
       method: "POST",
       body: JSON.stringify({
         ...data,
-        teacherNumber: Number(data?.teacherNumber),
-        salary: Number(data?.salary),
-        // dateOfBirth: new Date(data?.dateOfBirth).toISOString(),
       }),
     });
 
     if (res) {
       switchActionType(ENUMS.ACTIONS.VIEW);
-      fetchTeachers();
+      fetchStudents();
       reset();
     }
   };
 
   useEffect(() => {
-    fetchTeachers();
+    fetchStudents();
   }, []);
 
   const submitForm = async (data) => {
     const date = new Date(data?.dateOfBirth).toISOString();
     console.log(data, new Date(data?.dateOfBirth).toISOString());
-    await addTeachers({ ...data, dateOfBirth: date });
+    await addStudents({ ...data, dateOfBirth: date });
   };
 
   if (action_type === ENUMS.ACTIONS.ADD) {
@@ -81,8 +76,8 @@ function Teachers() {
             type={"date"}
             max={max}
           />
-          <FormInput title="Teacher Number" camelCase="teacherNumber" />
-          <FormInput title="Salary" camelCase="salary" isOptional={false} />
+          <FormInput title="Student Number" camelCase="studentNumber" />
+
           <Button type="submit">Submit</Button>
         </Form>
       </FormProvider>
@@ -94,34 +89,28 @@ function Teachers() {
       <thead>
         <tr>
           <th>National ID Number</th>
-          <th>Title</th>
           <th>Name</th>
           <th>Surname</th>
           <th>Date of Birth</th>
-          <th>Teacher Number</th>
-          <th>Salary</th>
+          <th>Student Number</th>
         </tr>
       </thead>
       <tbody>
-        {teachers?.res?.map((teacher, index) => {
+        {students?.res?.map((student, index) => {
           const {
             nationalId,
-            title,
             name,
             surname,
             dateOfBirth,
-            salary,
-            teacherNumber,
-          } = teacher;
+            studentNumber,
+          } = student;
           return (
             <tr key={index}>
               <td>{nationalId}</td>
-              <td>{title}</td>
               <td>{name}</td>
               <td>{surname}</td>
-              <td>{dateOfBirth.slice(0, 10)}</td>
-              <td>{teacherNumber}</td>
-              <td>{salary}</td>
+              <td>{dateOfBirth?.slice(0, 10)}</td>
+              <td>{studentNumber}</td>
             </tr>
           );
         })}
@@ -130,4 +119,4 @@ function Teachers() {
   );
 }
 
-export default Teachers;
+export default Students;
