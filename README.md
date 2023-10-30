@@ -20,5 +20,12 @@ npm install
 yarn install
 ```
 
-Third, Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fourth, Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+Fifth, run test:
+
+```bash
+npm test
+```
 

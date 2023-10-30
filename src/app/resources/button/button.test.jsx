@@ -4,7 +4,7 @@ import Button from "./index";
 
 describe("Button Component", () => {
   it("renders a button with provided children and optional class name", () => {
-    // Define test values
+  
     const buttonText = "Click Me";
     const customClassName = "custom-class";
 
