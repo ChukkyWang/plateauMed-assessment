@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import React from "react";
 
 export function FormInput({
   camelCase,
@@ -24,6 +25,7 @@ export function FormInput({
         {title} {isOptional !== false && <sup style={{ color: "red" }}>*</sup>}
       </label>
       <input
+        role="textbox"
         {...rest}
         name={camelCase}
         id={camelCase}

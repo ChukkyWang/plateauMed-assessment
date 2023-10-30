@@ -1,12 +1,12 @@
 "use client";
 
-import { useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./page.module.css";
 import General from "./resources/templates/general.template";
-import Teachers from "./teachers";
+import Teachers from "./users/teachers";
 import { AppContext } from "./utils/context/AppContext";
 import { ENUMS } from "./utils/enums";
-import Students from "./students";
+import Students from "./users/students";
 
 export default function Home() {
   const { class_type } = useContext(AppContext);

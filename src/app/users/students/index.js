@@ -1,15 +1,16 @@
 "use client";
 
+import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import styles from "./page.module.css";
-import { Form } from "./resources/form/form";
-import Table from "./resources/table";
-import { FormInput } from "./resources/form/input";
-import Button from "./resources/button";
-import { CalculateMaxAge } from "./utils/util";
+import styles from "../../page.module.css";
+import { Form } from "../../resources/form/form";
+import Table from "../../resources/table";
+import { FormInput } from "../../resources/form/input";
+import Button from "../../resources/button";
+import { CalculateMaxAge } from "../../utils/util";
 import { useContext, useState, useEffect } from "react";
-import { AppContext } from "./utils/context/AppContext";
-import { ENUMS } from "./utils/enums";
+import { AppContext } from "../../utils/context/AppContext";
+import { ENUMS } from "../../utils/enums";
 
 function Students() {
   const [students, setStudent] = useState({});
@@ -97,13 +98,8 @@ function Students() {
       </thead>
       <tbody>
         {students?.res?.map((student, index) => {
-          const {
-            nationalId,
-            name,
-            surname,
-            dateOfBirth,
-            studentNumber,
-          } = student;
+          const { nationalId, name, surname, dateOfBirth, studentNumber } =
+            student;
           return (
             <tr key={index}>
               <td>{nationalId}</td>
